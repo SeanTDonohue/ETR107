@@ -1,0 +1,11 @@
+
+from microbit import *
+
+rangeValues = 4 #change this value to change the range of your pot, 4 brightness levels etc... 1023 would make it stay the same from the raw ADC 
+valuepin16.write_digital(0) #make sure light is off/no pulse
+sleep(1000)while True:    
+    position = pin1.read_analog() #read the raw value off analog pin    
+    position = int(rangeValues * (position / 1023)) #convert the value to operate with ADC 
+  
+    
+pin16.write_analog(position) #use that value to pulse PWM to change brightness of LED on output
