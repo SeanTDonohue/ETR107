@@ -1,0 +1,11 @@
+from microbit import *
+
+steps=0
+
+while True:
+    if accelerometer.get_(y) > 1500 and accelerometer.was_gesture("up"):
+        steps += 1
+        display.show(steps)
+    if button_a.is_pressed():
+        steps = 0
+        display.show(0)
